@@ -35,7 +35,7 @@ public class PickUpActivity extends AppCompatActivity {
                 int n = random.nextInt(3);
                 Uri uri;
 
-                // momosaki
+                // momosaki22
                 if(n == 1){
                     uri = Uri.parse("mailto:" + res.getString(R.string.mail_to1).toString());
 
