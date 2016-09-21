@@ -30,16 +30,29 @@ public class PickUpActivity extends AppCompatActivity {
                 EditText edit01 = (EditText) findViewById(R.id.editText);
                 String title = edit01.getText().toString();
                 Resources res = getResources();
+
                 Random random = new Random();
                 int n = random.nextInt(3);
-                int mail = 1;
-                if(v == )
-                Uri uri = Uri.parse("mailto:" + res.getString(R.string.mail_to).toString());
+                Uri uri;
+
+                // momosaki
+                if(n == 1){
+                    uri = Uri.parse("mailto:" + res.getString(R.string.mail_to1).toString());
+
+                }else if(n == 2){
+                    uri = Uri.parse("mailto:" + res.getString(R.string.mail_to2).toString());
+
+                }else{
+                    uri = Uri.parse("mailto:" + res.getString(R.string.mail_to3).toString());
+
+                }
+
 
                 Intent intent = new Intent(Intent.ACTION_SENDTO,uri);
                 intent.putExtra(Intent.EXTRA_SUBJECT,title);
                 intent.putExtra(Intent.EXTRA_TEXT,strPlace + "に迎えにきて");
                 startActivity(intent);
+
             }
         });
     }
